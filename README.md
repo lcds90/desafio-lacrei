@@ -15,10 +15,10 @@ Esse projeto envolve em recriar um layout de acordo com o figma para o voluntari
 
 ### Desenvolvimento 🖥️
 
-- [ ] Next.js
-- [ ] Styled components
-- [ ] Typescript
-- [ ] Testes
+- [x] Next.js
+- [x] Styled components
+- [x] Typescript
+- [x] Lib para Testes
 
 ---
 
