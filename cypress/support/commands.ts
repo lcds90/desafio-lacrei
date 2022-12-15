@@ -1,4 +1,5 @@
-/// <reference types="cypress" />
+/* eslint-disable max-len */
+// / <reference types="cypress" />
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -37,4 +38,4 @@
 // }
 
 // Prevent TypeScript from reading file as legacy script
-export {}
+export {};

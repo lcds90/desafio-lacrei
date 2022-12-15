@@ -1,13 +1,17 @@
-import Head from 'next/head'
+import Head from "next/head";
 import {
   Container,
   Main,
   Title,
   Description,
   CodeTag,
-} from '../components/sharedstyles'
-import Cards from '../components/cards'
+} from "../components/sharedstyles";
+import Cards from "../components/cards";
 
+/**
+ * Home: The Landing page of the web app
+ * @return {JSX.Element} The JSX Code for the Home Page
+ */
 export default function Home() {
   return (
     <Container>
@@ -29,5 +33,5 @@ export default function Home() {
         <Cards />
       </Main>
     </Container>
-  )
+  );
 }
