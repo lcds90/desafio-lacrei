@@ -1,0 +1,42 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Estilizando, testando e construindo seu projeto antes de realizar commit'
+
+# Check Prettier standards
+npm run check-format ||
+(
+    echo 'Algo falhou no Prettier. 😥
+    Execute npm run format, adicione as alterações e tente commitar novamente. 😉';
+    false;
+)
+
+# Check ESLint Standards
+npm run check-lint ||
+(
+        echo 'Algo falhou no ESLint. 😥
+                Execute npm run lint, adicione as alterações e tente commitar novamente. 😉'
+        false; 
+)
+
+# Check tsconfig standards
+npm run check-types ||
+(
+    echo 'Algo falhou no Typescript. 😥
+            Realize as devidas alterações e tente commitar novamente. 😉';
+    false;
+)
+
+# If everything passes... Now we can commit
+echo 'Parece que tudo está certo, vamos realizar o build do seu projeto. 🎉'
+
+npm run build ||
+(
+    echo 'Algo falhou no build. ❌👷🔨
+                Veja os erros acima e tente novamente. 
+    '
+    false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅✅✅ Tudo certo, vamos realizar o commit. 🎉🎉🎉🎉'
