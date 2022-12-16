@@ -1,6 +1,15 @@
-import Link from 'next/link'
-import { Container, Main, Title, Description } from '../components/sharedstyles'
+import Link from "next/link";
+import {
+  Container,
+  Main,
+  Title,
+  Description,
+} from "../components/sharedstyles";
 
+/**
+ * About: The About page of the web app
+ * @return {JSX.Element} The JSX Code for the About Page
+ */
 export default function About() {
   return (
     <Container>
@@ -11,5 +20,5 @@ export default function About() {
         </Description>
       </Main>
     </Container>
-  )
+  );
 }

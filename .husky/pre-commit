@@ -1,0 +1,45 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo
+echo '🏗️👷 Pré-commit 🏗️👷'
+echo
+echo '🔍🔎 Vamos verificar o Prettier. 🔍🔎'
+
+npm run check-format ||
+(
+    echo 'Algo falhou no Prettier. 😥'
+    echo 'Execute npm run format, adicione as alterações e tente commitar novamente. 😉';
+    false;
+)
+echo 'Prettier ok! 🎉✅'
+echo
+echo '🔍🔎 Vamos verificar o ESLint. 🔍🔎'
+npm run check-lint ||
+(
+        echo 'Algo falhou no ESLint. 😥'
+        echo 'Execute npm run lint, adicione as alterações e tente commitar novamente. 😉'
+        false; 
+)
+echo 'ESLint ok! 🎉✅'
+echo
+echo '🔍🔎 Vamos verificar o Typescript. 🔍🔎'
+npm run check-types ||
+(
+    echo 'Algo falhou no Typescript. 😥'
+    echo 'Realize as devidas alterações e tente commitar novamente. 😉';
+    false;
+)
+echo 'Typescript ok! 🎉✅'
+echo
+echo 'Vamos realizar o build do seu projeto. 🎉'
+
+npm run build ||
+(
+    echo 'Algo falhou no build. ❌👷🔨'
+    echo 'Veja os erros acima e tente novamente.'
+    false;
+)
+echo '✨ Build realizado com sucesso. ✨'
+echo
+echo '✅✅✅✅ Tudo certo'
+echo '🏗️👷 Pré-commit finalizado. 🏗️👷'

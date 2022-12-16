@@ -15,16 +15,16 @@ Esse projeto envolve em recriar um layout de acordo com o figma para o voluntari
 
 ### Desenvolvimento 🖥️
 
-- [ ] Next.js
-- [ ] Styled components
-- [ ] Typescript
-- [ ] Testes
+- [x] Next.js
+- [x] Styled components
+- [x] Typescript
+- [x] Lib para Testes
 
 ---
 
 ## Recursos
 
-**[Figma](https://www.figma.com/file/rinPq1hNUad5M5P4B9Sl23/Desafio?node-id=2%3A15&t=apIxxo3pcKbKGRX4-0)**: Acesse o figma para ter acesso ao layout 
+**[Figma](https://www.figma.com/file/rinPq1hNUad5M5P4B9Sl23/Desafio?node-id=2%3A15&t=apIxxo3pcKbKGRX4-0)**: Acesse o figma para ter acesso ao layout
 
 [**Aplicação**](https://desafio-lacrei-five.vercel.app): Confira como deve ficar a aplicação após ser finalizada
 
@@ -47,14 +47,14 @@ Ao utilizar um [Link](https://nextjs.org/docs/api-reference/next/link) de `next/
 **components/StyledLink.js**
 
 ```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
+import Link from "next/link";
+import styled from "styled-components";
 
 const StyledLink = ({ as, children, className, href }) => (
   <Link href={href} as={as} passHref>
     <a className={className}>{children}</a>
   </Link>
-)
+);
 
 export default styled(StyledLink)`
   color: #0075e0;
@@ -70,19 +70,19 @@ export default styled(StyledLink)`
     outline: none;
     border: 0;
   }
-`
+`;
 ```
 
 **pages/index.js**
 
 ```javascript
-import StyledLink from '../components/StyledLink'
+import StyledLink from "../components/StyledLink";
 
 export default () => (
   <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
     First post
   </StyledLink>
-)
+);
 ```
 
 </details>
