@@ -1,7 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🏗️👷 Estilizando, testando e construindo seu projeto antes de realizar commit'
+echo '🏗️👷 Pré-commit 🏗️👷'
+
+npx --no -- commitlint --edit "$1" ||
+(
+    echo 'Algo falhou no commitlint. 😥
+            Veja os erros acima e tente novamente. 😉'
+    false;
+)
 
 # Check Prettier standards
 npm run check-format ||
@@ -37,6 +44,7 @@ npm run build ||
     '
     false;
 )
+
 
 # If everything passes... Now we can commit
 echo '✅✅✅✅ Tudo certo, vamos realizar o commit. 🎉🎉🎉🎉'
