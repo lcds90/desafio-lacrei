@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo
+echo '✍️📝 Commit-msg 📝✍️'
+
+echo '🔍🔎 Vamos verificar o commitlint. 🔍🔎'
+
+npx --no -- commitlint --edit ||
+(
+    echo 'Algo falhou no commitlint. 😥'
+    echo 'Veja os erros acima e tente novamente. 😉'
+    false;
+)
+
+npx semantic-commit-emoji "$@"
+
+echo 'Commitlint ok! 🎉✅'
+echo
+echo '✅✅✅✅ Tudo certo'
+echo '📝✍️ Commit-msg finalizado. 📝✍️'
+echo
+echo 'Seu commit está pronto para ser enviado. 🚀'
