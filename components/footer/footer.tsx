@@ -1,6 +1,7 @@
-import { IThemeParam } from "interfaces";
 import Link from "next/link";
 import styled from "styled-components";
+import { IThemeParam } from "interfaces";
+import { ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
   display: flex;
@@ -46,38 +47,20 @@ const Footer = styled.footer`
   }
 `;
 
-interface Link {
-  link: string;
-  src: string;
-  alt: string;
-}
-
-const links: Link[] = [
-  {
-    link: "https://www.facebook.com/lacrei",
-    src: "/assets/facebook.svg",
-    alt: "Facebook Logo",
-  },
-  {
-    link: "https://www.instagram.com/lacrei",
-    src: "/assets/instagram.svg",
-    alt: "Instagram Logo",
-  },
-  {
-    link: "https://www.linkedin.com/company/lacrei",
-    src: "/assets/linkedin.svg",
-    alt: "Linkedin Logo",
-  },
-];
-
 const FooterComponent = () => {
   return (
-    <Footer>
+    <Footer id={ID.FOOTER}>
       <div className="container">
         <section className="links-wrapper">
-          <Link href="/">Home</Link>
-          <Link href="/about">Pessoa Usuária</Link>
-          <Link href="/about">Profissional</Link>
+          <Link href="/" id={ID.LINK_HOME}>
+            Home
+          </Link>
+          <Link href="/about" id={ID.LINK_USER}>
+            Pessoa Usuária
+          </Link>
+          <Link href="/about" id={ID.LINK_PROFESSIONAL}>
+            Profissional
+          </Link>
         </section>
         <section className="social-wrapper">
           {links.map((link) => (
@@ -86,6 +69,7 @@ const FooterComponent = () => {
               key={link.alt}
               target="_blank"
               rel="noopener noreferrer"
+              id={link.id}
             >
               <img src={link.src} alt={link.alt} />
             </a>

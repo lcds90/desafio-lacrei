@@ -7,7 +7,6 @@
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "lint": "next lint",
-    "lintt": "eslint . --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "prettier:fix": "prettier --write .",
     "fix": "npm run lint:fix && npm run prettier:fix",

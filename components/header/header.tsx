@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { ID } from "./header.enum";
 import { IThemeParam } from "interfaces";
 import { Title } from "styles";
 
@@ -27,14 +28,20 @@ const Header = styled.header`
 
 const HeaderComponent = () => {
   return (
-    <Header>
-      <div className="logo">
+    <Header id={ID.HEADER}>
+      <div className="logo" id={ID.LOGO}>
         <Title>Lacrei</Title>
       </div>
       <div className="header-links-wrapper">
-        <Link href="/">Home</Link>
-        <Link href="/about">Pessoa Usuária</Link>
-        <Link href="/about">Profissional</Link>
+        <Link href="/" id={ID.LINK_HOME}>
+          Home
+        </Link>
+        <Link href="/pessoa-usuaria" id={ID.LINK_USER}>
+          Pessoa Usuária
+        </Link>
+        <Link href="/profissional" id={ID.LINK_PROFESSIONAL}>
+          Profissional
+        </Link>
       </div>
     </Header>
   );

@@ -1,3 +1,3 @@
 import { ITheme, IThemeParam } from "./theme";
-
-export type { ITheme, IThemeParam };
+import { ILink } from "./generic";
+export type { ILink, ITheme, IThemeParam };
