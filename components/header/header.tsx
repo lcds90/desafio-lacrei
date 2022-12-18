@@ -30,7 +30,9 @@ const HeaderComponent = () => {
   return (
     <Header id={ID.HEADER}>
       <div className="logo" id={ID.LOGO}>
-        <Title>Lacrei</Title>
+        <Link href="/">
+          <Title>Lacrei</Title>
+        </Link>
       </div>
       <div className="header-links-wrapper">
         <Link href="/" id={ID.LINK_HOME}>

@@ -1,6 +1,7 @@
 export interface ILink {
-  link: string;
-  src: string;
-  alt: string;
+  href: string;
   id: string;
+  src?: string;
+  alt?: string;
+  text?: string;
 }

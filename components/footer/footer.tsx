@@ -1,34 +1,34 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { IThemeParam } from "interfaces";
-import { ID, links } from "./footer.enum";
+import { devLinks, ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid: 1fr 1rem / repeat(2, 1fr);
   margin: 0 4rem;
   height: 100%;
+
   color: ${({ theme }: IThemeParam) => theme.colors.primary};
   border-top: 1px solid ${({ theme }: IThemeParam) => theme.colors.primary};
 
   .footer-links-wrapper {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
+    color: darkgray;
+    font-weight: 400;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1rem;
+    gap: 1rem;
+    font-size: 0.75rem;
   }
 
   .container {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 1.5rem;
-    align-items: flex-start;
-    flex-wrap: nowrap;
   }
 
   .links-wrapper {
@@ -44,6 +44,12 @@ const Footer = styled.footer`
     width: 100%;
     display: flex;
     gap: 2rem;
+  }
+
+  .final-app {
+    font-weight: 400;
+    color: #656565;
+    font-size: 0.75rem;
   }
 `;
 
@@ -65,7 +71,7 @@ const FooterComponent = () => {
         <section className="social-wrapper">
           {links.map((link) => (
             <a
-              href={link.link}
+              href={link.href}
               key={link.alt}
               target="_blank"
               rel="noopener noreferrer"
@@ -75,8 +81,27 @@ const FooterComponent = () => {
             </a>
           ))}
         </section>
+        <Link
+          className="final-app"
+          href="https://desafio-lacrei-five.vercel.app"
+        >
+          Desafio Front-end Lacrei
+        </Link>
       </div>
-      <div className="footer-links-wrapper"></div>
+      <div className="footer-links-wrapper">
+        {process.env.NEXT_PUBLIC_ENV !== "production" &&
+          devLinks.map((link) => (
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.href}
+              key={link.id}
+              id={link.id}
+            >
+              {link.text}
+            </Link>
+          ))}
+      </div>
     </Footer>
   );
 };
