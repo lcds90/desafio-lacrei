@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 0 0.5rem;
-  display: flex;
-  flex-flow: column nowrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3.5rem 1fr 12rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
   min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
 `;
 const Main = styled.main`
   padding: 5rem 0;
@@ -21,7 +23,7 @@ const Main = styled.main`
 const Title = styled.h1`
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: center;
   text-decoration: none;
 
