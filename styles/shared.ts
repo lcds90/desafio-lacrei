@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 0 0.5rem;
-  display: flex;
-  flex-flow: column nowrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3.5rem 1fr 11rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
   min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
 `;
 const Main = styled.main`
   padding: 5rem 0;
@@ -21,7 +23,7 @@ const Main = styled.main`
 const Title = styled.h1`
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: center;
   text-decoration: none;
 
@@ -41,14 +43,5 @@ const Description = styled.p`
   line-height: 1.5;
   font-size: 1.5rem;
 `;
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-`;
 
-export { Container, Main, Title, Description, CodeTag };
+export { Container, Main, Title, Description };
