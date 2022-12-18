@@ -1,13 +1,6 @@
-import {
-  Container,
-  Main,
-  Title,
-  Description,
-  CodeTag,
-} from "../components/sharedstyles";
-import Cards from "../components/cards";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import { Container, Main, Title, Description, CodeTag } from "styles";
+import { Cards, Footer, Header } from "components";
+
 /**
  * Home: The Landing page of the web app
  * @return {JSX.Element} The JSX Code for the Home Page

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { IThemeParam } from "interfaces";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const Card = styled.div`
   padding: 1.5rem;
   color: inherit;
   text-decoration: none;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 100%;
@@ -22,8 +23,8 @@ const Card = styled.div`
   &:hover,
   :focus,
   :active {
-    color: #0070f3;
-    border-color: #0070f3;
+    color: ${({ theme }: IThemeParam) => theme.colors.primary};
+    border-color: ${({ theme }: IThemeParam) => theme.colors.primary};
   }
 `;
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { AppTheme } from "../pages/_app";
-import { Title } from "./sharedstyles";
+import { IThemeParam } from "interfaces";
+import { Title } from "styles";
 
 const Header = styled.header`
   display: flex;
@@ -11,8 +11,8 @@ const Header = styled.header`
   padding: 2rem 4rem;
   height: 100%;
   width: 100%;
-  background-color: ${({ theme }: { theme: AppTheme }) => theme.colors.header};
-  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }: IThemeParam) => theme.colors.header};
+  color: ${({ theme }: IThemeParam) => theme.colors.primary};
 
   .header-links-wrapper {
     display: flex;

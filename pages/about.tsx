@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  Container,
-  Main,
-  Title,
-  Description,
-} from "../components/sharedstyles";
+import { Container, Main, Title, Description } from "styles";
 
 /**
  * About: The About page of the web app

@@ -1,3 +1,4 @@
+import { IThemeParam } from "interfaces";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -8,8 +9,8 @@ const Footer = styled.footer`
   align-items: center;
   margin: 0 4rem;
   height: 100%;
-  color: ${({ theme }) => theme.colors.primary};
-  border-top: 1px solid ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }: IThemeParam) => theme.colors.primary};
+  border-top: 1px solid ${({ theme }: IThemeParam) => theme.colors.primary};
 
   .footer-links-wrapper {
     display: flex;

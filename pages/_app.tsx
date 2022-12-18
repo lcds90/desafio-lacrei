@@ -1,25 +1,10 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
-import GlobalStyle from "../components/globalstyles";
 import Head from "next/head";
+import { ThemeProvider } from "styled-components";
+import { ITheme } from "interfaces";
+import { GlobalStyle } from "styles";
 
-export interface AppTheme {
-  colors: {
-    primary: string;
-    secondary: string;
-    header: string;
-    white: string;
-  };
-  font: {
-    small: string;
-    default: string;
-    big: string;
-    bigger: string;
-    family: string;
-  };
-}
-
-const theme: AppTheme = {
+const theme: ITheme = {
   colors: {
     primary: "#018762",
     secondary: "#1F1F1F",
