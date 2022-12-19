@@ -1,16 +1,14 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { IThemeParam } from "interfaces";
 import { devLinks, ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
   display: grid;
-  grid: 1fr 1rem / repeat(2, 1fr);
   margin: 0 4rem;
   height: 100%;
 
-  color: ${({ theme }: IThemeParam) => theme.colors.primary};
-  border-top: 1px solid ${({ theme }: IThemeParam) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  border-top: 1px solid ${({ theme }) => theme.colors.light};
 
   .footer-links-wrapper {
     display: flex;
@@ -82,6 +80,8 @@ const FooterComponent = () => {
           ))}
         </section>
         <Link
+          target="_blank"
+          rel="noopener noreferrer"
           className="final-app"
           href="https://desafio-lacrei-five.vercel.app"
         >

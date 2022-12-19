@@ -11,27 +11,27 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   height: 100%;
-  padding: 0 4rem;
+  width: 100%;
+  padding: 1rem;
+  gap: 50px;
+`;
+
+export const Subject = styled.h2`
+  font-size: ${({ theme }) => theme.font.large};
+  color: ${({ theme }) => theme.colors.base};
 `;
 
 export const Description = styled.p`
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
-`;
-
-export const PageSubject = styled.h2`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 3rem;
-  text-align: center;
+  font-size: ${({ theme }) => theme.font.small};
+  color: ${({ theme }) => theme.colors.gray};
+  margin: ${({ theme }) => theme.spacing.default} 0;
 `;
 
 export const PageBlock = styled.section`
   height: 100%;
-`
+`;
 
 export const PageImage = styled.section`
   display: flex;
@@ -41,6 +41,7 @@ export const PageImage = styled.section`
   padding-bottom: 0.75rem;
 
   img {
-    width: 540px;
+    width: 100%;
+    height: auto;
   }
-`
+`;

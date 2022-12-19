@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { ID } from "./header.enum";
-import { IThemeParam } from "interfaces";
 
 const Header = styled.header`
   display: grid;
@@ -11,8 +10,8 @@ const Header = styled.header`
   padding: 0.5rem;
   height: 5rem;
   width: 100%;
-  background-color: ${({ theme }: IThemeParam) => theme.colors.lighter};
-  color: ${({ theme }: IThemeParam) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.lighter};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Title = styled.h1`
@@ -25,8 +24,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   color: black;
-  font-size: ${({ theme }: IThemeParam) => theme.font.small};
-  gap: 1rem;
+  font-size: ${({ theme }) => theme.font.small};
+  gap: 15px;
 `;
 
 const HeaderComponent = () => {
