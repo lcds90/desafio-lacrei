@@ -8,11 +8,12 @@ const theme: ITheme = {
   colors: {
     primary: "#018762",
     secondary: "#1F1F1F",
-    header: "#EEEEEE",
+    light: "#B0E0D3",
+    lighter: "#EEEEEE",
     white: "#FFFFFF",
   },
   font: {
-    small: "0.5rem",
+    small: "0.85rem",
     default: "1rem",
     big: "2rem",
     bigger: "3rem",

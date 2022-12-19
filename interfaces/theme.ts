@@ -2,7 +2,8 @@ export interface ITheme {
   colors: {
     primary: string;
     secondary: string;
-    header: string;
+    light: string;
+    lighter: string;
     white: string;
   };
   font: {

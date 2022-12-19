@@ -5,8 +5,6 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     color: ${({ theme }: IThemeParam) => theme.colors.primary};
-    padding: 0;
-    margin: 0;
     font-family: ${({ theme }: IThemeParam) => theme.font.family};
     font-weight: 400;
   }
@@ -19,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

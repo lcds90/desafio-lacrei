@@ -1,47 +1,46 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 3.5rem 1fr 11rem;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   min-height: 100vh;
   width: 100vw;
   max-width: 100%;
 `;
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
+
+export const Main = styled.main`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 4rem;
 `;
 
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 2rem;
-  text-align: center;
-  text-decoration: none;
-
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
-  }
-`;
-
-const Description = styled.p`
+export const Description = styled.p`
   text-align: center;
   line-height: 1.5;
   font-size: 1.5rem;
 `;
 
-export { Container, Main, Title, Description };
+export const PageSubject = styled.h2`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+  text-align: center;
+`;
+
+export const PageBlock = styled.section`
+  height: 100%;
+`
+
+export const PageImage = styled.section`
+  display: flex;
+  justify-self: center;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 0.75rem;
+
+  img {
+    width: 540px;
+  }
+`

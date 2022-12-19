@@ -2,39 +2,40 @@ import Link from "next/link";
 import styled from "styled-components";
 import { ID } from "./header.enum";
 import { IThemeParam } from "interfaces";
-import { Title } from "styles";
 
 const Header = styled.header`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 4rem;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  padding: 0.5rem;
+  height: 5rem;
   width: 100%;
-  background-color: ${({ theme }: IThemeParam) => theme.colors.header};
+  background-color: ${({ theme }: IThemeParam) => theme.colors.lighter};
   color: ${({ theme }: IThemeParam) => theme.colors.primary};
+`;
 
-  .header-links-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2.5rem;
-    color: black;
-    font-weight: 700;
-  }
+const Title = styled.h1`
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: ${({ theme }: IThemeParam) => theme.font.small};
+  gap: 1rem;
 `;
 
 const HeaderComponent = () => {
   return (
     <Header id={ID.HEADER}>
-      <div className="logo" id={ID.LOGO}>
-        <Link href="/">
-          <Title>Lacrei</Title>
-        </Link>
-      </div>
-      <div className="header-links-wrapper">
+      <Link id={ID.LOGO} href="/">
+        <Title>Lacrei</Title>
+      </Link>
+      <Wrapper>
         <Link href="/" id={ID.LINK_HOME}>
           Home
         </Link>
@@ -44,7 +45,7 @@ const HeaderComponent = () => {
         <Link href="/profissional" id={ID.LINK_PROFESSIONAL}>
           Profissional
         </Link>
-      </div>
+      </Wrapper>
     </Header>
   );
 };
