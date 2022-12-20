@@ -1,16 +1,37 @@
-describe("Navigation", () => {
-  it("should navigate to the about page", () => {
-    // Start from the index page
-    cy.visit("http://localhost:3000/");
+describe("📃 Pages tests", () => {
+  describe("🧪 Navbar", () => {
+    it("✅ title", () => {
+      cy.visit("/");
+      const h1 = cy.get("h1");
+      const a = cy.get("h1 > a");
+      h1.should("exist");
+      h1.should("have.text", "Lacrei");
+      a.should("have.attr", "href", "/");
+      a.click();
+      h1.should("exist");
+      h1.should("have.text", "Lacrei");
+    });
 
-    // Find a link with an href attribute containing "about" and click it
-    cy.get('a[href*="about"]').click();
+    it("🔗 links", () => {
+      cy.visit("/");
+      const links = cy.get("nav > a");
+      links.should("have.length", 3);
 
-    // The new url should include "/about"
-    cy.url().should("include", "/about");
+      const linkHome = cy.get("nav > a:nth-child(1)");
+      linkHome.should("exist");
+      linkHome.should("have.text", "Home");
+      linkHome.should("have.attr", "href", "/");
 
-    // The new page should contain an h1 with "About page"
-    cy.get("h1").contains("About Page");
+      const linkUser = cy.get("nav > a:nth-child(2)");
+      linkUser.should("exist");
+      linkUser.should("have.text", "Pessoa Usuária");
+      linkUser.should("have.attr", "href", "/pessoa-usuaria");
+
+      const linkProfessional = cy.get("nav > a:nth-child(3)");
+      linkProfessional.should("exist");
+      linkProfessional.should("have.text", "Profissional");
+      linkProfessional.should("have.attr", "href", "/profissional");
+    });
   });
 });
 

@@ -17,19 +17,19 @@ export enum ID {
 export const links: ILink[] = [
   {
     href: "https://www.instagram.com/lacrei",
-    src: "/assets/instagram.svg",
+    src: "/assets/svg/instagram.svg",
     alt: "Instagram Logo",
     id: ID.INSTAGRAM,
   },
   {
     href: "https://www.facebook.com/lacrei",
-    src: "/assets/facebook.svg",
+    src: "/assets/svg/facebook.svg",
     alt: "Facebook Logo",
     id: ID.FACEBOOK,
   },
   {
     href: "https://www.linkedin.com/company/lacrei",
-    src: "/assets/linkedin.svg",
+    src: "/assets/svg/linkedin.svg",
     alt: "Linkedin Logo",
     id: ID.LINKEDIN,
   },

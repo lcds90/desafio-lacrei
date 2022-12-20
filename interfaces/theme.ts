@@ -1,19 +1,25 @@
 export interface ITheme {
   colors: {
+    base: string;
     primary: string;
     secondary: string;
-    header: string;
+    light: string;
+    lighter: string;
+    gray: string;
     white: string;
   };
   font: {
     small: string;
     default: string;
+    large: string;
     big: string;
     bigger: string;
     family: string;
   };
-}
-
-export interface IThemeParam {
-  theme: ITheme;
+  spacing: {
+    small: string;
+    default: string;
+    big: string;
+    bigger: string;
+  };
 }

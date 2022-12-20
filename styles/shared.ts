@@ -1,47 +1,88 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 3.5rem 1fr 11rem;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   min-height: 100vh;
   width: 100vw;
   max-width: 100%;
 `;
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
+
+export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  gap: 50px;
   align-items: center;
-`;
 
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 2rem;
-  text-align: center;
-  text-decoration: none;
+  @media (min-width: 512px) {
+    gap: 25px;
+  }
 
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
+  @media (min-width: 1040px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem 6rem 0 4rem;
   }
 `;
 
-const Description = styled.p`
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
+export const Subject = styled.h2`
+  font-size: ${({ theme }) => theme.font.large};
+  color: ${({ theme }) => theme.colors.base};
+  max-width: 550px;
+
+  @media (min-width: 512px) {
+    font-size: ${({ theme }) => theme.font.big};
+  }
+
+  @media (min-width: 1040px) {
+    font-size: ${({ theme }) => theme.font.bigger};
+  }
 `;
 
-export { Container, Main, Title, Description };
+export const Description = styled.p`
+  font-size: ${({ theme }) => theme.font.small};
+  color: ${({ theme }) => theme.colors.gray};
+  margin: ${({ theme }) => theme.spacing.default} 0;
+
+  @media (min-width: 512px) {
+    font-size: ${({ theme }) => theme.font.default};
+  }
+
+  @media (min-width: 1040px) {
+    font-size: ${({ theme }) => theme.font.large};
+  }
+`;
+
+export const PageBlock = styled.section`
+  height: 100%;
+  width: 100%;
+
+  @media (min-width: 512px) {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 512px;
+  }
+`;
+
+export const PageImage = styled.section`
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 0.75rem;
+
+  @media (min-width: 512px) {
+    padding-bottom: 0;
+    align-items: flex-end;
+  }
+
+  img {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+  }
+`;

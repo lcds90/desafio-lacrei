@@ -1,5 +1,20 @@
-import { Container, Main, Title, Description } from "./shared";
+import {
+  Container,
+  Main,
+  Description,
+  Subject,
+  PageBlock,
+  PageImage,
+} from "./shared";
 
 import GlobalStyle from "./global";
 
-export { GlobalStyle, Container, Main, Title, Description };
+export {
+  GlobalStyle,
+  Container,
+  Main,
+  Description,
+  Subject,
+  PageBlock,
+  PageImage,
+};

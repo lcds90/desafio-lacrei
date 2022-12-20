@@ -6,17 +6,27 @@ import { GlobalStyle } from "styles";
 
 const theme: ITheme = {
   colors: {
+    base: "#000000",
     primary: "#018762",
     secondary: "#1F1F1F",
-    header: "#EEEEEE",
+    light: "#B0E0D3",
+    lighter: "#EEEEEE",
     white: "#FFFFFF",
+    gray: "rgb(81, 81, 81)",
   },
   font: {
+    small: "0.85rem",
+    default: "1rem",
+    large: "1.5rem",
+    big: "2rem",
+    bigger: "3rem",
+    family: "'Nunito', 'sans-serif'",
+  },
+  spacing: {
     small: "0.5rem",
     default: "1rem",
     big: "2rem",
     bigger: "3rem",
-    family: "'Nunito', 'sans-serif'",
   },
 };
 

@@ -1,43 +1,42 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { IThemeParam } from "interfaces";
-import { devLinks, ID, links } from "./footer.enum";
+import { ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
-  display: grid;
-  grid: 1fr 1rem / repeat(2, 1fr);
-  margin: 0 4rem;
+  margin: 0 1rem;
+  padding: 1rem 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-  color: ${({ theme }: IThemeParam) => theme.colors.primary};
-  border-top: 1px solid ${({ theme }: IThemeParam) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  border-top: 1px solid ${({ theme }) => theme.colors.light};
 
-  .footer-links-wrapper {
-    display: flex;
-    color: darkgray;
-    font-weight: 400;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 1rem;
-    gap: 1rem;
-    font-size: 0.75rem;
+  @media (min-width: 512px) {
+    margin: 0 4rem;
   }
-
-  .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 1.5rem;
-  }
-
   .links-wrapper {
     display: flex;
-    flex-flow: row nowrap;
-    gap: 2.5rem;
+    flex-direction: column;
     color: black;
     font-size: 1rem;
-    font-weight: 500;
+    gap: 5px;
+    padding-top: 1rem;
+
+    @media (min-width: 512px) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    a {
+      font-size: 0.9rem;
+      font-weight: 400;
+
+      @media (min-width: 512px) {
+        font-size: 1rem;
+      }
+    }
   }
 
   .social-wrapper {
@@ -56,52 +55,38 @@ const Footer = styled.footer`
 const FooterComponent = () => {
   return (
     <Footer id={ID.FOOTER}>
-      <div className="container">
-        <section className="links-wrapper">
-          <Link href="/" id={ID.LINK_HOME}>
-            Home
-          </Link>
-          <Link href="/about" id={ID.LINK_USER}>
-            Pessoa Usuária
-          </Link>
-          <Link href="/about" id={ID.LINK_PROFESSIONAL}>
-            Profissional
-          </Link>
-        </section>
-        <section className="social-wrapper">
-          {links.map((link) => (
-            <a
-              href={link.href}
-              key={link.alt}
-              target="_blank"
-              rel="noopener noreferrer"
-              id={link.id}
-            >
-              <img src={link.src} alt={link.alt} />
-            </a>
-          ))}
-        </section>
-        <Link
-          className="final-app"
-          href="https://desafio-lacrei-five.vercel.app"
-        >
-          Desafio Front-end Lacrei
+      <section className="links-wrapper">
+        <Link href="/" id={ID.LINK_HOME}>
+          Home
         </Link>
-      </div>
-      <div className="footer-links-wrapper">
-        {process.env.NEXT_PUBLIC_ENV !== "production" &&
-          devLinks.map((link) => (
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={link.href}
-              key={link.id}
-              id={link.id}
-            >
-              {link.text}
-            </Link>
-          ))}
-      </div>
+        <Link href="/about" id={ID.LINK_USER}>
+          Pessoa Usuária
+        </Link>
+        <Link href="/about" id={ID.LINK_PROFESSIONAL}>
+          Profissional
+        </Link>
+      </section>
+      <section className="social-wrapper">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            key={link.alt}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={link.id}
+          >
+            <img src={link.src} alt={link.alt} />
+          </a>
+        ))}
+      </section>
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="final-app"
+        href="https://desafio-lacrei-five.vercel.app"
+      >
+        Desafio Front-end Lacrei
+      </Link>
     </Footer>
   );
 };
