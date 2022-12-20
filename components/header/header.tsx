@@ -5,19 +5,26 @@ import { ID } from "./header.enum";
 const Header = styled.header`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
   place-items: center;
-  padding: 0.5rem;
-  height: 5rem;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.lighter};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (min-width: 520px) {
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 3rem;
+    padding: 0.5rem 2rem;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 2rem;
   text-align: center;
   text-decoration: none;
+
+  @media (min-width: 520px) {
+    justify-self: start;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -26,14 +33,22 @@ const Wrapper = styled.div`
   color: black;
   font-size: ${({ theme }) => theme.font.small};
   gap: 15px;
+
+  @media (min-width: 520px) {
+    justify-self: flex-end;
+    font-size: ${({ theme }) => theme.font.default};
+    gap: 30px;
+  }
 `;
 
 const HeaderComponent = () => {
   return (
     <Header id={ID.HEADER}>
-      <Link id={ID.LOGO} href="/">
-        <Title>Lacrei</Title>
-      </Link>
+      <Title>
+        <Link id={ID.LOGO} href="/">
+          Lacrei
+        </Link>
+      </Title>
       <Wrapper>
         <Link href="/" id={ID.LINK_HOME}>
           Home

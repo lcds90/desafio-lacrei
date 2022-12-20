@@ -17,7 +17,17 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   place-items: center;
+  margin-top: ${({ theme }) => theme.spacing.big};
   padding: ${({ theme }) => theme.spacing.default};
+  width: 100%;
+
+  @media (min-width: 520px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5rem;
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 const Button = styled.button<ButtonProps>`
@@ -52,6 +62,10 @@ const Button = styled.button<ButtonProps>`
     color: ${colors.primary};
     border: 0.1rem solid ${colors.primary};
   `}
+
+  @media (min-width: 520px) {
+    width: 100%;
+  }
 `;
 
 /**
@@ -64,10 +78,12 @@ export default function Home() {
       <Header />
       <Main>
         <PageBlock>
-          <Subject>Boas vindas a Lacrei Saúde</Subject>
-          <Description>
-            Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
-          </Description>
+          <div>
+            <Subject>Boas vindas a Lacrei Saúde</Subject>
+            <Description>
+              Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
+            </Description>
+          </div>
           <Wrapper>
             <Button>Pessoa usuária</Button>
             <Button outlined>Profissional</Button>

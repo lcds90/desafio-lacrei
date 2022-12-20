@@ -3,19 +3,15 @@ import styled from "styled-components";
 import { ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
-  display: grid;
-  margin: 1rem;
+  margin: 0 2rem;
+  padding: 1rem 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   color: ${({ theme }) => theme.colors.primary};
   border-top: 1px solid ${({ theme }) => theme.colors.light};
-
-  .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 
   .links-wrapper {
     display: flex;
@@ -25,9 +21,18 @@ const Footer = styled.footer`
     gap: 5px;
     padding-top: 1rem;
 
+    @media (min-width: 520px) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
     a {
       font-size: 0.9rem;
       font-weight: 400;
+
+      @media (min-width: 520px) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -47,40 +52,38 @@ const Footer = styled.footer`
 const FooterComponent = () => {
   return (
     <Footer id={ID.FOOTER}>
-      <div className="container">
-        <section className="links-wrapper">
-          <Link href="/" id={ID.LINK_HOME}>
-            Home
-          </Link>
-          <Link href="/about" id={ID.LINK_USER}>
-            Pessoa Usuária
-          </Link>
-          <Link href="/about" id={ID.LINK_PROFESSIONAL}>
-            Profissional
-          </Link>
-        </section>
-        <section className="social-wrapper">
-          {links.map((link) => (
-            <a
-              href={link.href}
-              key={link.alt}
-              target="_blank"
-              rel="noopener noreferrer"
-              id={link.id}
-            >
-              <img src={link.src} alt={link.alt} />
-            </a>
-          ))}
-        </section>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="final-app"
-          href="https://desafio-lacrei-five.vercel.app"
-        >
-          Desafio Front-end Lacrei
+      <section className="links-wrapper">
+        <Link href="/" id={ID.LINK_HOME}>
+          Home
         </Link>
-      </div>
+        <Link href="/about" id={ID.LINK_USER}>
+          Pessoa Usuária
+        </Link>
+        <Link href="/about" id={ID.LINK_PROFESSIONAL}>
+          Profissional
+        </Link>
+      </section>
+      <section className="social-wrapper">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            key={link.alt}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={link.id}
+          >
+            <img src={link.src} alt={link.alt} />
+          </a>
+        ))}
+      </section>
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="final-app"
+        href="https://desafio-lacrei-five.vercel.app"
+      >
+        Desafio Front-end Lacrei
+      </Link>
     </Footer>
   );
 };
