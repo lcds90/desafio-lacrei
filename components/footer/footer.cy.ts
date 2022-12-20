@@ -18,10 +18,6 @@ describe("🧪 Footer tests", () => {
       cy.get(`#${element}`).should("exist");
     });
   });
-
-  // describe("🧪 Footer links", () => {
-
-  // });
 });
 
 export {};

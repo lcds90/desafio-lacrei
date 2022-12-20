@@ -9,6 +9,7 @@ const Header = styled.header`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.lighter};
   color: ${({ theme }) => theme.colors.primary};
+  padding-bottom: 10px;
 
   @media (min-width: 512px) {
     grid-template-columns: max-content 1fr;
@@ -27,7 +28,7 @@ const Title = styled.h1`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
   color: black;

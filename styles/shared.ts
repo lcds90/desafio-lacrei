@@ -19,7 +19,7 @@ export const Main = styled.main`
   align-items: center;
 
   @media (min-width: 512px) {
-    gap: 0;
+    gap: 25px;
   }
 
   @media (min-width: 1040px) {
