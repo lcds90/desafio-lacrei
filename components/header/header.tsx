@@ -10,10 +10,10 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.lighter};
   color: ${({ theme }) => theme.colors.primary};
 
-  @media (min-width: 520px) {
+  @media (min-width: 512px) {
     grid-template-columns: max-content 1fr;
     grid-template-rows: 3rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 4rem;
   }
 `;
 
@@ -22,7 +22,7 @@ const Title = styled.h1`
   text-align: center;
   text-decoration: none;
 
-  @media (min-width: 520px) {
+  @media (min-width: 512px) {
     justify-self: start;
   }
 `;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   font-size: ${({ theme }) => theme.font.small};
   gap: 15px;
 
-  @media (min-width: 520px) {
+  @media (min-width: 512px) {
     justify-self: flex-end;
     font-size: ${({ theme }) => theme.font.default};
     gap: 30px;

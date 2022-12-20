@@ -21,12 +21,16 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.default};
   width: 100%;
 
-  @media (min-width: 520px) {
+  @media (min-width: 512px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 5rem;
-    width: 100%;
     padding: 0;
+  }
+
+  @media (min-width: 1040px) {
+    gap: 0;
+    place-items: unset;
   }
 `;
 
@@ -35,7 +39,7 @@ const Button = styled.button<ButtonProps>`
   display: block;
   width: 60%;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 700;
   margin: 0.5rem 0;
   cursor: pointer;
@@ -63,8 +67,8 @@ const Button = styled.button<ButtonProps>`
     border: 0.1rem solid ${colors.primary};
   `}
 
-  @media (min-width: 520px) {
-    width: 100%;
+  @media (min-width: 512px) {
+    width: 80%;
   }
 `;
 

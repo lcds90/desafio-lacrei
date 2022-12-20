@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
-  margin: 0 2rem;
+  margin: 0 1rem;
   padding: 1rem 0;
   height: 100%;
   display: flex;
@@ -13,6 +13,9 @@ const Footer = styled.footer`
   color: ${({ theme }) => theme.colors.primary};
   border-top: 1px solid ${({ theme }) => theme.colors.light};
 
+  @media (min-width: 512px) {
+    margin: 0 4rem;
+  }
   .links-wrapper {
     display: flex;
     flex-direction: column;
@@ -21,7 +24,7 @@ const Footer = styled.footer`
     gap: 5px;
     padding-top: 1rem;
 
-    @media (min-width: 520px) {
+    @media (min-width: 512px) {
       flex-direction: row;
       gap: 2rem;
     }
@@ -30,7 +33,7 @@ const Footer = styled.footer`
       font-size: 0.9rem;
       font-weight: 400;
 
-      @media (min-width: 520px) {
+      @media (min-width: 512px) {
         font-size: 1rem;
       }
     }
