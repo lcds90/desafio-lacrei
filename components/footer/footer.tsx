@@ -1,41 +1,34 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { devLinks, ID, links } from "./footer.enum";
+import { ID, links } from "./footer.enum";
 
 const Footer = styled.footer`
   display: grid;
-  margin: 0 4rem;
+  margin: 1rem;
   height: 100%;
 
   color: ${({ theme }) => theme.colors.primary};
   border-top: 1px solid ${({ theme }) => theme.colors.light};
 
-  .footer-links-wrapper {
-    display: flex;
-    color: darkgray;
-    font-weight: 400;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 1rem;
-    gap: 1rem;
-    font-size: 0.75rem;
-  }
-
   .container {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 1.5rem;
+    gap: 10px;
   }
 
   .links-wrapper {
     display: flex;
-    flex-flow: row nowrap;
-    gap: 2.5rem;
+    flex-direction: column;
     color: black;
     font-size: 1rem;
-    font-weight: 500;
+    gap: 5px;
+    padding-top: 1rem;
+
+    a {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
   }
 
   .social-wrapper {
@@ -87,20 +80,6 @@ const FooterComponent = () => {
         >
           Desafio Front-end Lacrei
         </Link>
-      </div>
-      <div className="footer-links-wrapper">
-        {process.env.NEXT_PUBLIC_ENV !== "production" &&
-          devLinks.map((link) => (
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={link.href}
-              key={link.id}
-              id={link.id}
-            >
-              {link.text}
-            </Link>
-          ))}
       </div>
     </Footer>
   );

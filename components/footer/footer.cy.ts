@@ -19,23 +19,9 @@ describe("🧪 Footer tests", () => {
     });
   });
 
-  describe("🧪 Footer links", () => {
-    it("should show dev links ✅", () => {
-      cy.visit("/");
-      if (process.env.NODE_ENV === "development") {
-        cy.get(`#${ID.LINK_GITHUB}`).should("exist");
-        cy.get(`#${ID.LINK_FIGMA}`).should("exist");
-      }
-    });
+  // describe("🧪 Footer links", () => {
 
-    it("should not show dev links ✅", () => {
-      cy.visit("/");
-      if (process.env.NODE_ENV === "production") {
-        cy.get(`#${ID.LINK_GITHUB}`).should("not.exist");
-        cy.get(`#${ID.LINK_FIGMA}`).should("not.exist");
-      }
-    });
-  });
+  // });
 });
 
 export {};
