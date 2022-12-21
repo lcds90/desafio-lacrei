@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 interface ButtonProps {
+  id: string;
   children?: string;
   outlined?: boolean;
 }

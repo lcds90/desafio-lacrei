@@ -9,17 +9,23 @@ export default function Home() {
   return (
     <Layout>
       <PageBlock>
-        <Subject>Boas vindas a Lacrei Saúde</Subject>
-        <Description>
+        <Subject id="home__welcome">Boas vindas a Lacrei Saúde</Subject>
+        <Description id="home__description">
           Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
         </Description>
         <Wrapper gap={2}>
-          <Button>Pessoa usuária</Button>
-          <Button outlined>Profissional</Button>
+          <Button id="home__button__user">Pessoa usuária</Button>
+          <Button id="home__button_professional" outlined>
+            Profissional
+          </Button>
         </Wrapper>
       </PageBlock>
       <PageImage>
-        <img src="/assets/svg/female-doctor.svg" alt="Doutora" />
+        <img
+          id="home__image__doctor"
+          src="/assets/svg/female-doctor.svg"
+          alt="Imagem de uma médica"
+        />
       </PageImage>
     </Layout>
   );

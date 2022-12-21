@@ -32,6 +32,33 @@ describe("📃 Pages tests", () => {
       linkProfessional.should("have.text", "Profissional");
       linkProfessional.should("have.attr", "href", "/profissional");
     });
+
+    it("🏘️ home", () => {
+      cy.visit("/");
+      const home = cy.get("#home__welcome");
+      home.should("exist");
+      home.should("have.text", "Boas vindas a Lacrei Saúde");
+
+      const homeDescription = cy.get("#home__description");
+      homeDescription.should("exist");
+      homeDescription.should(
+        "have.text",
+        "Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+"
+      );
+
+      const homeButtonUser = cy.get("#home__button__user");
+      homeButtonUser.should("exist");
+      homeButtonUser.should("have.text", "Pessoa usuári");
+
+      const homeButtonProfessional = cy.get("#home__button__professional");
+      homeButtonProfessional.should("exist");
+      homeButtonProfessional.should("have.text", "Profissional");
+
+      const image = cy.get("#home__image__doctor");
+      image.should("exist");
+      image.should("have.attr", "src", "/assets/svg/female-doctor.svg");
+      image.should("have.attr", "alt", "Imagem de uma médica");
+    });
   });
 });
 
