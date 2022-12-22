@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
   flex-direction: column;
   height: 100vh;
   min-height: 100vh;
@@ -43,10 +43,21 @@ export const Subject = styled.h2`
   }
 `;
 
-export const Description = styled.p`
+interface DescriptionProps {
+  bordered?: boolean;
+}
+
+export const Description = styled.p<DescriptionProps>`
   font-size: ${({ theme }) => theme.font.small};
   color: ${({ theme }) => theme.colors.gray};
   margin: ${({ theme }) => theme.spacing.default} 0;
+
+  ${({ bordered, theme }) =>
+    bordered &&
+    `
+    border-left: 5px solid ${theme.colors.primary};
+    padding-left: 1rem;
+  `}
 
   @media (min-width: 512px) {
     font-size: ${({ theme }) => theme.font.default};
