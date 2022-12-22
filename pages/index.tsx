@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <Layout>
       <PageBlock>
-        <Subject id="home__welcome">Boas vindas a Lacrei Saúde</Subject>
+        <Subject id="home__subject">Boas vindas a Lacrei Saúde</Subject>
         <Description id="home__description">
           Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
         </Description>
         <Wrapper gap={2}>
           <Button id="home__button__user">Pessoa usuária</Button>
-          <Button id="home__button_professional" outlined>
+          <Button id="home__button__professional" outlined>
             Profissional
           </Button>
         </Wrapper>
