@@ -1,4 +1,7 @@
-import Footer from "./footer/footer";
-import Header from "./header/header";
+import { Button } from "./button";
+import { Footer } from "./footer";
+import { Header } from "./header";
+import { Wrapper } from "./wrapper";
+import { Layout } from "./layout";
 
-export { Footer, Header };
+export { Button, Footer, Header, Layout, Wrapper };

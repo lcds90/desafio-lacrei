@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { ID } from "./header.enum";
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -42,9 +42,9 @@ const Wrapper = styled.nav`
   }
 `;
 
-const HeaderComponent = () => {
+export const Header = () => {
   return (
-    <Header id={ID.HEADER}>
+    <StyledHeader id={ID.HEADER}>
       <Title>
         <Link id={ID.LOGO} href="/">
           Lacrei
@@ -61,8 +61,6 @@ const HeaderComponent = () => {
           Profissional
         </Link>
       </Wrapper>
-    </Header>
+    </StyledHeader>
   );
 };
-
-export default HeaderComponent;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { ID, links } from "./footer.enum";
 
-const Footer = styled.footer`
+const StyledFooter = styled.footer`
   margin: 0 1rem;
   padding: 1rem 0;
   height: 100%;
@@ -52,9 +52,9 @@ const Footer = styled.footer`
   }
 `;
 
-const FooterComponent = () => {
+export const Footer = () => {
   return (
-    <Footer id={ID.FOOTER}>
+    <StyledFooter id={ID.FOOTER}>
       <section className="links-wrapper">
         <Link href="/" id={ID.LINK_HOME}>
           Home
@@ -87,8 +87,6 @@ const FooterComponent = () => {
       >
         Desafio Front-end Lacrei
       </Link>
-    </Footer>
+    </StyledFooter>
   );
 };
-
-export default FooterComponent;

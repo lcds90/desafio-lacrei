@@ -10,7 +10,7 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier:fix": "prettier --write .",
     "fix": "npm run lint:fix && npm run prettier:fix",
-    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e": "npm run build && start-server-and-test start http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "prepare": "husky install",
     "check-types": "tsc --pretty --noEmit",
