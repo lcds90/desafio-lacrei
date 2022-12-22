@@ -77,6 +77,29 @@ describe("📃 App Pages tests", () => {
       image.should("have.attr", "src", "/assets/svg/users.svg");
       image.should("have.attr", "alt", "Grupo de pessoas usuárias");
     });
+
+    it("👨‍⚕️ professional", () => {
+      cy.visit("/profissional");
+      const professional = cy.get("#professional__subject");
+      professional.should("exist");
+      professional.should("have.text", "Profissional");
+
+      const professionalDescription = cy.get("#professional__description");
+      professionalDescription.should("exist");
+      professionalDescription.should(
+        "have.text",
+        "Buscamos recrutar pessoas profissionais da saúde que entendam as necessidades e se comprometam com o bem-estar da comunidade LGBTQIAPN+"
+      );
+
+      const image = cy.get("#professional__image__group");
+      image.should("exist");
+      image.should("have.attr", "src", "/assets/svg/professionals.svg");
+      image.should(
+        "have.attr",
+        "alt",
+        "Grupo de profissionais da área da saúde"
+      );
+    });
   });
 });
 
