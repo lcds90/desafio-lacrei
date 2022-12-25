@@ -1,6 +1,6 @@
-import Link from "next/link";
 import styled from "styled-components";
 import { ID } from "./header.enum";
+import { Link } from "../link";
 
 const StyledHeader = styled.header`
   display: grid;
@@ -10,10 +10,10 @@ const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.lighter};
   color: ${({ theme }) => theme.colors.primary};
   padding-bottom: 10px;
+  max-height: 4rem;
 
   @media (min-width: 512px) {
     grid-template-columns: max-content 1fr;
-    grid-template-rows: 3rem;
     padding: 0.5rem 4rem;
   }
 `;
@@ -45,19 +45,17 @@ const Wrapper = styled.nav`
 export const Header = () => {
   return (
     <StyledHeader id={ID.HEADER}>
-      <Title>
-        <Link id={ID.LOGO} href="/">
-          Lacrei
-        </Link>
-      </Title>
+      <Link isActive primary bold id={ID.LOGO} href="/">
+        <Title>Lacrei</Title>
+      </Link>
       <Wrapper>
-        <Link href="/" id={ID.LINK_HOME}>
+        <Link primary bold href="/" id={ID.LINK_HOME}>
           Home
         </Link>
-        <Link href="/pessoa-usuaria" id={ID.LINK_USER}>
+        <Link primary bold href="/pessoa-usuaria" id={ID.LINK_USER}>
           Pessoa Usuária
         </Link>
-        <Link href="/profissional" id={ID.LINK_PROFESSIONAL}>
+        <Link primary bold href="/profissional" id={ID.LINK_PROFESSIONAL}>
           Profissional
         </Link>
       </Wrapper>

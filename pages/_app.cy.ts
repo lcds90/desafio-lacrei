@@ -3,7 +3,7 @@ describe("📃 App Pages tests", () => {
     it("✅ title", () => {
       cy.visit("/");
       const h1 = cy.get("header > h1");
-      const a = cy.get("header > h1 > a");
+      const a = cy.get("header > a");
       h1.should("exist");
       h1.should("have.text", "Lacrei");
       a.should("have.attr", "href", "/");

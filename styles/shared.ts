@@ -1,4 +1,37 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import NextLink from "next/link";
+
+export const brightHover = css`
+  transition: opacity 0.2s ease-in-out;
+
+  :focus,
+  :hover {
+    opacity: 0.6;
+  }
+`;
+
+interface LinkProps {
+  active?: boolean;
+  primary?: boolean;
+  bold?: boolean;
+}
+
+export const Link = styled(NextLink)<LinkProps>`
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+
+  ${({ active, bold, primary, theme }) => `
+    color: ${primary && active ? theme.colors.primary : theme.colors.base};
+    font-weight: ${active || bold ? 700 : 400};
+  `}
+
+  ${brightHover}
+
+  @media (min-width: 512px) {
+    font-size: 1rem;
+  }
+`;
 
 export const Container = styled.div`
   display: grid;
@@ -17,7 +50,8 @@ export const Main = styled.main`
   padding: 1.5rem;
   gap: 50px;
   align-items: center;
-
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
   @media (min-width: 512px) {
     gap: 25px;
   }

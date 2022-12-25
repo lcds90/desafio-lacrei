@@ -1,5 +1,5 @@
-import Link from "next/link";
 import styled from "styled-components";
+import { Link } from "components/link";
 import { ID, links } from "./footer.enum";
 
 const StyledFooter = styled.footer`
@@ -19,8 +19,6 @@ const StyledFooter = styled.footer`
   .links-wrapper {
     display: flex;
     flex-direction: column;
-    color: black;
-    font-size: 1rem;
     gap: 5px;
     padding-top: 1rem;
 
@@ -28,25 +26,34 @@ const StyledFooter = styled.footer`
       flex-direction: row;
       gap: 2rem;
     }
-
-    a {
-      font-size: 0.9rem;
-      font-weight: 400;
-
-      @media (min-width: 512px) {
-        font-size: 1rem;
-      }
-    }
   }
 
   .social-wrapper {
     width: 100%;
     display: flex;
     gap: 2rem;
+    align-items: baseline;
+
+    a {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    }
+    a:last-child {
+      height: 2rem;
+      transition: filter 0.5s ease-in-out;
+      filter: sepia(1) saturate(1) hue-rotate(100deg) brightness(1.25);
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    img {
+      height: 100%;
+    }
   }
 
   .final-app {
-    font-weight: 400;
+    /* font-weight: 400; */
     color: #656565;
     font-size: 0.75rem;
   }
@@ -59,34 +66,28 @@ export const Footer = () => {
         <Link href="/" id={ID.LINK_HOME}>
           Home
         </Link>
-        <Link href="/about" id={ID.LINK_USER}>
+        <Link href="/pessoa-usuaria" id={ID.LINK_USER}>
           Pessoa Usuária
         </Link>
-        <Link href="/about" id={ID.LINK_PROFESSIONAL}>
+        <Link href="/profissional" id={ID.LINK_PROFESSIONAL}>
           Profissional
         </Link>
       </section>
       <section className="social-wrapper">
         {links.map((link) => (
-          <a
-            href={link.href}
-            key={link.alt}
-            target="_blank"
-            rel="noopener noreferrer"
-            id={link.id}
-          >
+          <Link isBlank href={link.href} key={link.alt} id={link.id} bold>
             <img src={link.src} alt={link.alt} />
-          </a>
+          </Link>
         ))}
       </section>
-      <Link
+      <a
         target="_blank"
         rel="noopener noreferrer"
         className="final-app"
         href="https://desafio-lacrei-five.vercel.app"
       >
         Desafio Front-end Lacrei
-      </Link>
+      </a>
     </StyledFooter>
   );
 };
