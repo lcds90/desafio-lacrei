@@ -14,8 +14,10 @@ export default function Home() {
           Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
         </Description>
         <Wrapper gap={2}>
-          <Button id="home__button__user">Pessoa usuária</Button>
-          <Button id="home__button__professional" outlined>
+          <Button href="/pessoa-usuaria" id="home__button__user">
+            Pessoa usuária
+          </Button>
+          <Button href="/profissional" id="home__button__professional" outlined>
             Profissional
           </Button>
         </Wrapper>
