@@ -1,6 +1,6 @@
 import { ID } from "./header.enum";
 
-describe("🧪 Header tests", () => {
+describe("🧪 Nav tests", () => {
   it("should exist ✨", () => {
     cy.visit("/");
 

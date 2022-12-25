@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { brightHover } from "styles/shared";
 
 interface ButtonProps {
   id: string;
@@ -15,23 +16,20 @@ const StyledButton = styled.button<ButtonProps>`
   width: 60%;
   border: none;
   border-radius: 10px;
-  font-weight: 700;
+  /* font-weight: 700; */
   margin: 0.5rem 0;
   cursor: pointer;
-  transition: filter 0.2s ease-in-out;
   box-shadow: 0 2.5px 5px 1px rgba(0, 0, 0, 0.25);
   text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
 
-  :focus,
-  :hover {
-    filter: brightness(1.25);
-  }
+  ${brightHover}
 
-  ${({ theme: { colors, font, spacing } }) => `
+  ${({ theme: { colors, spacing } }) => `
   height: ${spacing.bigger};
   background-color: ${colors.primary};
   color: ${colors.white};
-  font-size: ${font.default};
   `}
 
   ${({ outlined, theme: { colors } }) =>
