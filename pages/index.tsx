@@ -1,5 +1,6 @@
 import { Subject, PageBlock, PageImage, Description } from "styles";
 import { Button, Layout, Wrapper } from "components";
+import Image from "next/image";
 
 /**
  * Home: The Landing page of the web app
@@ -14,14 +15,18 @@ export default function Home() {
           Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+
         </Description>
         <Wrapper gap={2}>
-          <Button id="home__button__user">Pessoa usuária</Button>
-          <Button id="home__button__professional" outlined>
+          <Button href="/pessoa-usuaria" id="home__button__user">
+            Pessoa usuária
+          </Button>
+          <Button href="/profissional" id="home__button__professional" outlined>
             Profissional
           </Button>
         </Wrapper>
       </PageBlock>
       <PageImage>
-        <img
+        <Image
+          width={400}
+          height={400}
           id="home__image__doctor"
           src="/assets/svg/female-doctor.svg"
           alt="Imagem de uma médica"

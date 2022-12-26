@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "components/link";
 import { ID, links } from "./footer.enum";
+import Image from "next/image";
 
 const StyledFooter = styled.footer`
   margin: 0 1rem;
@@ -46,10 +47,6 @@ const StyledFooter = styled.footer`
         filter: none;
       }
     }
-
-    img {
-      height: 100%;
-    }
   }
 
   .final-app {
@@ -76,7 +73,7 @@ export const Footer = () => {
       <section className="social-wrapper">
         {links.map((link) => (
           <Link isBlank href={link.href} key={link.alt} id={link.id} bold>
-            <img src={link.src} alt={link.alt} />
+            <Image width={30} height={30} src={link.src} alt={link.alt} />
           </Link>
         ))}
       </section>

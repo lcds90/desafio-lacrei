@@ -1,5 +1,6 @@
 import { Subject, PageBlock, PageImage, Description } from "styles";
 import { Layout } from "components";
+import Image from "next/image";
 
 /**
  * Home: The Landing page of the web app
@@ -17,7 +18,9 @@ export default function Home() {
         </Description>
       </PageBlock>
       <PageImage>
-        <img
+        <Image
+          width={400}
+          height={400}
           id="user__image__users"
           src="/assets/svg/users.svg"
           alt="Grupo de pessoas usuárias"
