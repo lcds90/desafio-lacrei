@@ -2,7 +2,7 @@ describe("📃 App Pages tests", () => {
   describe("🧪 Navbar", () => {
     it("✅ title", () => {
       cy.visit("/");
-      const h1 = cy.get("header > h1");
+      const h1 = cy.get("header > a > h1");
       const a = cy.get("header > a");
       h1.should("exist");
       h1.should("have.text", "Lacrei");
@@ -48,10 +48,18 @@ describe("📃 App Pages tests", () => {
       const homeButtonUser = cy.get("#home__button__user");
       homeButtonUser.should("exist");
       homeButtonUser.should("have.text", "Pessoa usuária");
+      homeButtonUser.click().click();
+      cy.url().should("include", "/pessoa-usuaria");
+
+      cy.visit("/");
 
       const homeButtonProfessional = cy.get("#home__button__professional");
       homeButtonProfessional.should("exist");
       homeButtonProfessional.should("have.text", "Profissional");
+      homeButtonProfessional.click().click();
+      cy.url().should("include", "/profissional");
+
+      cy.visit("/");
 
       const image = cy.get("#home__image__doctor");
       image.should("exist");

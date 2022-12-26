@@ -1,5 +1,6 @@
 import { Subject, PageBlock, PageImage, Description } from "styles";
 import { Button, Layout, Wrapper } from "components";
+import Image from "next/image";
 
 /**
  * Home: The Landing page of the web app
@@ -23,7 +24,9 @@ export default function Home() {
         </Wrapper>
       </PageBlock>
       <PageImage>
-        <img
+        <Image
+          width={550}
+          height={550}
           id="home__image__doctor"
           src="/assets/svg/female-doctor.svg"
           alt="Imagem de uma médica"
