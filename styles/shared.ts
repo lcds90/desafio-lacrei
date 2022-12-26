@@ -16,7 +16,7 @@ interface LinkProps {
   bold?: boolean;
 }
 
-export const Link = styled(NextLink)<LinkProps>`
+export const Link = styled(NextLink) <LinkProps>`
   text-decoration: none;
   color: black;
   font-size: 0.9rem;
@@ -126,8 +126,6 @@ export const PageImage = styled.section`
   }
 
   img {
-    max-width: 550px;
-    width: 100%;
-    height: auto;
+    width: 550px;
   }
 `;

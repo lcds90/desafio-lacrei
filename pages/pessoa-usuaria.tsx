@@ -19,8 +19,8 @@ export default function Home() {
       </PageBlock>
       <PageImage>
         <Image
-          width={550}
-          height={550}
+          width={400}
+          height={400}
           id="user__image__users"
           src="/assets/svg/users.svg"
           alt="Grupo de pessoas usuárias"

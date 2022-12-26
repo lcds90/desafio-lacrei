@@ -18,8 +18,8 @@ export default function Home() {
       </PageBlock>
       <PageImage>
         <Image
-          width={550}
-          height={550}
+          width={400}
+          height={400}
           id="professional__image__group"
           src="/assets/svg/professionals.svg"
           alt="Grupo de profissionais da área da saúde"

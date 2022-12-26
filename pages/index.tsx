@@ -25,8 +25,8 @@ export default function Home() {
       </PageBlock>
       <PageImage>
         <Image
-          width={550}
-          height={550}
+          width={400}
+          height={400}
           id="home__image__doctor"
           src="/assets/svg/female-doctor.svg"
           alt="Imagem de uma médica"
